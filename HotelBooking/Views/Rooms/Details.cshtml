@@ -1,0 +1,49 @@
+﻿@model HotelBooking.DTO.RoomDto
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Room Details";
+}
+
+<h2>Room Details</h2>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            RoomID
+        </dt>
+        <dd class="col-sm-10">
+            @Model.RoomID
+        </dd>
+        <dt class="col-sm-2">
+            RoomType
+        </dt>
+        <dd class="col-sm-10">
+            @Model.RoomType
+        </dd>
+        <dt class="col-sm-2">
+            RoomNumber
+        </dt>
+        <dd class="col-sm-10">
+            @Model.RoomNumber
+        </dd>
+        <dt class="col-sm-2">
+           Status
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Status
+        </dd>
+        <dt class="col-sm-2">
+            PricePerNight
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PricePerNight
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Rooms" asp-action="Edit" asp-route-id="@Model.RoomID" class="btn btn-primary">Edit</a> |
+    <a asp-controller="Rooms" asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

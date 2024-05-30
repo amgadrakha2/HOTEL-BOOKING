@@ -1,0 +1,31 @@
+﻿@model HotelBooking.DTO.CustomerDto
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit Customer";
+}
+
+<h2>Edit Customer</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="CustomerID" />
+    <div class="form-group">
+        <label asp-for="FullName" class="control-label"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NationalID" class="control-label"></label>
+        <input asp-for="NationalID" class="form-control" />
+        <span asp-validation-for="NationalID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="control-label"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-controller="Customers" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>

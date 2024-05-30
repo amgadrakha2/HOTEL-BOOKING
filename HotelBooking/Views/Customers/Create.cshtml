@@ -1,0 +1,30 @@
+﻿@model HotelBooking.DTO.CustomerDto
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create Customer";
+}
+<h2>Create Customer</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="FullName" class="control-label"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NationalID" class="control-label"></label>
+        <input asp-for="NationalID" class="form-control" />
+        <span asp-validation-for="NationalID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="control-label"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-controller="Customers" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+

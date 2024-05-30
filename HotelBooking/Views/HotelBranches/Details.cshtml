@@ -1,0 +1,52 @@
+﻿@model HotelBooking.DTO.HotelBranchDto
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Hotel Branch Details";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hotel Branch Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .details-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Hotel Branch Details</h2>
+            <div class="details-label">Name:</div>
+            <div>@Model.Name</div>
+            <div class="details-label">Address:</div>
+            <div>@Model.Address</div>
+            <div class="details-label">Phone:</div>
+            <div>@Model.Phone</div>
+            <div style="margin-top: 20px;">
+                <a asp-controller="HotelBranches" asp-action="Edit" asp-route-id="@Model.BranchID" class="btn btn-primary">Edit</a>
+                <a asp-controller="HotelBranches" asp-action="Delete" asp-route-id="@Model.BranchID" class="btn btn-danger">Delete</a>
+                <a asp-controller="HotelBranches" asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

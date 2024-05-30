@@ -1,0 +1,55 @@
+﻿@model HotelBooking.DTO.BookingDto
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit Booking";
+}
+
+<h2>Booking Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            CheckInDate
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CheckInDate
+        </dd>
+        <dt class="col-sm-2">
+            CheckOutDate
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CheckOutDate
+        </dd>
+        <dt class="col-sm-2">
+            NumberOfRooms
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NumberOfRooms
+        </dd>
+        <dt class="col-sm-2">
+            NumberOfChildreen
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NumberOfChildren
+        </dd>
+        <dt class="col-sm-2">
+            NumberOfAdults
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NumberOfAdults
+        </dd>
+        <dt class="col-sm-2">
+            TotalCost
+        </dt>
+        <dd class="col-sm-10">
+            @Model.TotalCost
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Booking" asp-action="Edit" asp-route-id="@Model.BookingID" class="btn btn-primary">Edit</a> |
+    <a asp-controller="Booking" asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

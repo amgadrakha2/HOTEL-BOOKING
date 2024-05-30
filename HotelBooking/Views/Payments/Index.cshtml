@@ -1,0 +1,42 @@
+﻿@model IEnumerable<HotelBooking.DTO.PaymentDto>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Payment";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Payments</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Payments</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Cost</th>
+                    <th>Payment Date</th>
+                    <th>Booking ID</th>             
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var payment in Model)
+                {
+                    <tr>
+                        <td>@payment.Cost</td>
+                        <td>@payment.PaymentDate</td>
+                        <td>@payment.BookingID</td>
+                        <td>
+                            <a asp-controller="Payments" asp-action="Details" asp-route-id="@payment.PaymentID" class="btn btn-info">Details</a>
+                            <a asp-controller="Payments" asp-action="Delete" asp-route-id="@payment.PaymentID" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-controller="Payments" asp-action="Create" class="btn btn-primary">Create New Payment</a>
+    </div>
+</body>
+</html>

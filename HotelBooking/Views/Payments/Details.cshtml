@@ -1,0 +1,25 @@
+﻿@model HotelBooking.DTO.PaymentDto
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Payment Details";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Payment Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Details</h2>
+        <div>
+            <h4>Amount: @Model.Cost</h4>
+            <h4>Payment Date: @Model.PaymentDate</h4>
+            <h4>Booking ID: @Model.BookingID</h4>
+        </div>
+        <a asp-controller="Payments" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</body>
+</html>

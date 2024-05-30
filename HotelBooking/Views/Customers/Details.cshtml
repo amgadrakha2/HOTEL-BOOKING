@@ -1,0 +1,51 @@
+﻿@model HotelBooking.DTO.CustomerDto
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Customer Details";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .details-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Customer Details</h2>
+            <div class="details-label">Name:</div>
+            <div>@Model.FullName</div>
+            <div class="details-label">National ID:</div>
+            <div>@Model.NationalID</div>
+            <div class="details-label">Phone Number:</div>
+            <div>@Model.PhoneNumber</div>
+            <div style="margin-top: 20px;">
+                <a href="@Url.Action("Edit", "Customers", new { id = Model.CustomerID })" class="btn btn-primary">Edit</a>
+                <a href="@Url.Action("Index", "Customers")" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

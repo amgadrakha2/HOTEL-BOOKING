@@ -1,0 +1,43 @@
+﻿@model IEnumerable<HotelBooking.DTO.RoomDto>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Rooms";
+}
+
+<h2>Rooms</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Room</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>RoomID</th>
+            <th>RoomType</th>
+            <th>RoomNumber</th>
+            <th>PricePerNight</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RoomID</td>
+                <td>@item.RoomType</td>
+                <td>@item.RoomNumber</td>
+                <td>@item.PricePerNight</td>
+                <td>@item.Status</td>
+                <td>
+                    <a asp-controller="Rooms" asp-action="Create" class="btn btn-primary">Create New Room</a>
+                    <a asp-controller="Rooms" asp-action="Edit" asp-route-id="@item.RoomID" class="btn btn-secondary">Edit</a>
+                    <a asp-controller="Rooms" asp-action="Delete" asp-route-id="@item.RoomID" class="btn btn-danger">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

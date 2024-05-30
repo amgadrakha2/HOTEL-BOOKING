@@ -1,0 +1,29 @@
+﻿@model HotelBooking.DTO.PaymentDto
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Delete Payment";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Delete Payment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Delete Payment</h2>
+        <h3>Are you sure you want to delete this payment?</h3>
+        <div>
+            <h4>Amount: @Model.Cost</h4>
+            <h4>Payment Date: @Model.PaymentDate</h4>
+            <h4>Booking ID: @Model.BookingID</h4>
+        </div>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="PaymentID" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-controller="Payments" asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
